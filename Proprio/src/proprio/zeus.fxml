@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proprio.zeusController">
+   <children>
+      <Pane prefHeight="54.0" prefWidth="780.0" styleClass="title-top" stylesheets="@principal.css">
+         <children>
+            <Label layoutX="328.0" layoutY="10.0" text="PROPRIO" textFill="WHITE">
+               <font>
+                  <Font name="Bauhaus 93" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="54.0" prefHeight="467.0" prefWidth="200.0" styleClass="title-left" stylesheets="@principal.css">
+         <children>
+            <GridPane layoutX="11.0" layoutY="36.0" prefHeight="296.0" prefWidth="173.0" vgap="27.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="bureauBtn_panel" mnemonicParsing="false" onAction="#bureauPanelBtn" prefHeight="74.0" prefWidth="173.0" styleClass="connect-btn" stylesheets="@principal.css" text="Bureau" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="personBtn_panel" mnemonicParsing="false" onAction="#personPanelBtn" prefHeight="74.0" prefWidth="173.0" styleClass="connect-btn" stylesheets="@principal.css" text="Locataire" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="locationBtn_panel" mnemonicParsing="false" onAction="#locationPanelBtn" prefHeight="74.0" prefWidth="173.0" styleClass="connect-btn" stylesheets="@principal.css" text="Location" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="homeBtn_panel" mnemonicParsing="false" onAction="#homePanelBtn" prefHeight="74.0" prefWidth="173.0" styleClass="connect-btn" stylesheets="@principal.css" text="Logement" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <ImageView fx:id="logout" fitHeight="37.0" fitWidth="41.0" layoutX="80.0" layoutY="369.0" onMouseClicked="#logoutBtn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../logout.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <StackPane layoutX="200.0" layoutY="54.0" prefHeight="467.0" prefWidth="580.0">
+         <children>
+            <AnchorPane fx:id="personManagment" prefHeight="466.0" prefWidth="580.0" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label layoutX="185.0" layoutY="14.0" text="Gestion des locataires" textFill="#032645">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="19.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="12.0" layoutX="81.0" layoutY="60.0" prefHeight="346.0" prefWidth="418.0" vgap="13.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="addPersonGestion_form" mnemonicParsing="false" onAction="#addPersonGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="cruda-btn" stylesheets="@../../../principal.css" text="Ajouter locataire" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="infoPersonGestion_form" mnemonicParsing="false" onAction="#infoPersonGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="crudr-btn" stylesheets="@../../../principal.css" text="Informations locataire" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delPersonGestion_form" mnemonicParsing="false" onAction="#delPersonGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="cruds-btn" stylesheets="@../../../principal.css" text="Supprimer locataire" textFill="WHITE" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="upPersonGestion_form" mnemonicParsing="false" onAction="#upPersonGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="crudm-btn" stylesheets="@../../../principal.css" text="Modifier locataire" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addPersonSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#10599e" height="49.0" layoutX="172.0" layoutY="69.0" stroke="#ffffff00" strokeType="INSIDE" width="216.0" />
+                  <Label layoutX="184.0" layoutY="82.0" prefHeight="22.0" prefWidth="191.0" text="Ajout d'un locataire" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="19.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="12.0" layoutX="58.0" layoutY="170.0" prefHeight="223.0" prefWidth="500.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Nom :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Prénom :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Téléphone :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Numéro CNI :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cniFieldAddPersonSet" promptText="CI145376443" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="nomFieldAddPersonSet" promptText="KOFFI" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="prenomFieldAddPersonSet" promptText="JUDE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="telephoneFieldAddPersonSet" promptText="0759376464" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <Button fx:id="validerAddPerson" layoutX="238.0" layoutY="394.0" mnemonicParsing="false" onAction="#validerAddPersonBtn" prefHeight="32.0" prefWidth="83.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Valider" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="backAddPersonSet" fitHeight="37.0" fitWidth="41.0" layoutX="40.0" layoutY="14.0" onMouseClicked="#backAddPersonSetBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="infoPersonSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#11809c" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="72.0" layoutY="19.0" prefHeight="22.0" prefWidth="207.0" text="Informations locataire" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backInfoPersonSet" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backInfoPersonSetBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane hgap="12.0" layoutX="60.0" layoutY="64.0" prefHeight="161.0" prefWidth="475.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Nom :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Prénom :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Téléphone :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Numéro CNI :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cniFieldInfoPersonSet" editable="false" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="nomFieldInfoPersonSet" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="prenomFieldInfoPersonSet" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="telephoneFieldInfoPersonSet" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tableViewInfoPersonSet" layoutX="16.0" layoutY="232.0" onMouseClicked="#tableViewInfoPersonSetBtn" prefHeight="220.0" prefWidth="549.0">
+                     <columns>
+                        <TableColumn fx:id="num_piece_col_Info" prefWidth="75.0" text="num_pièce" />
+                        <TableColumn fx:id="nom_col_info" prefWidth="75.0" text="nom" />
+                        <TableColumn fx:id="prenom_col_info" prefWidth="75.0" text="prénom" />
+                        <TableColumn fx:id="telephone_col_info" prefWidth="75.0" text="téléphone" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TextField fx:id="searchFieldInfoPersonSet" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboSelectorInfoPersonSet" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateInfoPersonSet" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateInfoPersonSetBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="upPersonSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#119c3e" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="95.0" layoutY="19.0" prefHeight="22.0" prefWidth="161.0" text="Modifier locataire" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backUpPersonSet" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backUpPersonSetBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane hgap="12.0" layoutX="48.0" layoutY="89.0" prefHeight="253.0" prefWidth="501.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Nom :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Prénom :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Téléphone :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Numéro CNI :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cniFieldUpPersonSet" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="nomFieldUpPersonSet" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="prenomFieldUpPersonSet" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="telephoneFieldUpPersonSet" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="searchFieldUpPersonSet" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboSelectorUpPersonSet" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateUpPersonSet" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateUpPersonSetBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <Button fx:id="modifierUpPersonSet" layoutX="463.0" layoutY="373.0" mnemonicParsing="false" onAction="#modifierUpPersonSetBtn" prefHeight="32.0" prefWidth="94.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="delPersonSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#b91313" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="84.0" layoutY="19.0" prefHeight="22.0" prefWidth="183.0" text="Supprimer locataire" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backDelPersonSet" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backDelPersonSetBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane hgap="12.0" layoutX="48.0" layoutY="89.0" prefHeight="253.0" prefWidth="501.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Nom :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Prénom :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Téléphone :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Numéro CNI :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cniFieldDelPersonSet" editable="false" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="nomFieldDelPersonSet" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="prenomFieldDelPersonSet" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="telephoneFieldDelPersonSet" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="searchFieldDelPersonSet" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboSelectorDelPersonSet" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateDelPersonSet" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateDelPersonSetBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <Button fx:id="supprimerDelPersonSet" layoutX="437.0" layoutY="370.0" mnemonicParsing="false" onAction="#supprimerDelPersonSetBtn" prefHeight="32.0" prefWidth="112.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="locationManagment" prefHeight="466.0" prefWidth="580.0" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label layoutX="188.0" layoutY="14.0" text="Gestion des locations" textFill="#032645">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="19.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="12.0" layoutX="81.0" layoutY="60.0" prefHeight="346.0" prefWidth="418.0" vgap="13.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="addLocationG" mnemonicParsing="false" onAction="#addLocationGBtn" prefHeight="167.0" prefWidth="243.0" styleClass="cruda-btn" stylesheets="@../../../principal.css" text="Ajouter location" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="infoLocationG" mnemonicParsing="false" onAction="#infoLocationGBtn" prefHeight="167.0" prefWidth="243.0" styleClass="crudr-btn" stylesheets="@../../../principal.css" text="Informations location" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delLocationG" mnemonicParsing="false" onAction="#delLocationGBtn" prefHeight="167.0" prefWidth="243.0" styleClass="cruds-btn" stylesheets="@../../../principal.css" text="Supprimer location" textFill="WHITE" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delLocationG" mnemonicParsing="false" onAction="#upLocationGBtn" prefHeight="167.0" prefWidth="243.0" styleClass="crudm-btn" stylesheets="@../../../principal.css" text="Modifier location" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addLocationSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#10599e" height="49.0" layoutX="172.0" layoutY="56.0" stroke="#ffffff00" strokeType="INSIDE" width="216.0" />
+                  <Label layoutX="186.0" layoutY="70.0" prefHeight="22.0" prefWidth="188.0" text="Ajout d'une location" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="12.0" layoutX="40.0" layoutY="70.0" prefHeight="286.0" prefWidth="500.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Début de location :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Fin de location :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="114.0" text="Numéro CNI :" textFill="#032645" visible="false">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cniFieldAddLocationSet" promptText="CI145376443" visible="false" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <DatePicker fx:id="dateStartFieldAddLocationSet" editable="false" prefHeight="14.0" prefWidth="244.0" promptText="CHOISIR DATE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="dateEndFieldAddLocationSet" editable="false" prefHeight="14.0" prefWidth="244.0" promptText="CHOISIR DATE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Propriétaire :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Logement :" textFill="#032645" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboPersonFieldAddLocationSet" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="comboHomeFieldAddLocationSet" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <Button fx:id="validerAddLocationSet" layoutX="238.0" layoutY="394.0" mnemonicParsing="false" onAction="#validerAddLocationSetBtn" prefHeight="32.0" prefWidth="83.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Valider" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="backAddLocationSet" fitHeight="37.0" fitWidth="41.0" layoutX="36.0" layoutY="14.0" onMouseClicked="#backAddLocationSetBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="infoLocationSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#11809c" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="76.0" layoutY="19.0" prefHeight="22.0" prefWidth="200.0" text="Informations location" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backLocationInfo" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backLocationInfoBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tableViewInfoHomeSet" layoutX="16.0" layoutY="275.0" onMouseClicked="#tableViewInfoHomeSetBtn" prefHeight="177.0" prefWidth="549.0">
+                     <columns>
+                        <TableColumn fx:id="id_location_col_Home" prefWidth="75.0" text="id_location" />
+                        <TableColumn fx:id="date_deb_col_Home" prefWidth="75.0" text="date_deb" />
+                        <TableColumn fx:id="date_fin_col_Home" prefWidth="75.0" text="date_fin" />
+                        <TableColumn fx:id="num_piece_col_Home" prefWidth="75.0" text="num_pièce" />
+                        <TableColumn fx:id="id_logement_col_Home" prefWidth="75.0" text="id_logement" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TextField fx:id="searchFieldLocationInfo" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboLocationInfo" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateLocationInfo" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateLocationInfoBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <GridPane hgap="12.0" layoutX="51.0" layoutY="51.0" prefHeight="211.0" prefWidth="501.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Début de location :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Fin de location :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Propriétaire :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Logement :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="debFieldLocationInfo" editable="false" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="endFieldLocationInfo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="personFieldLocationInfo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="homeFieldLocationInfo" editable="false" prefHeight="37.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="11.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="upLocationSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#119c3e" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="97.0" layoutY="19.0" prefHeight="22.0" prefWidth="157.0" text="Modifier location" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backUpLocationSet" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backUpLocationSetBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchFieldUpLocationSet" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboSelectorUpLocationSet" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateUpLocationSet" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateUpLocationSetBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <Button fx:id="modifierUpLocationSet" layoutX="448.0" layoutY="373.0" mnemonicParsing="false" onAction="#modifierUpLocationSetBtn" prefHeight="32.0" prefWidth="94.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <GridPane hgap="12.0" layoutX="41.0" layoutY="68.0" prefHeight="296.0" prefWidth="501.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Début de location :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Fin de location :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dateStartFieldUpLocationSet" editable="false" prefHeight="14.0" prefWidth="244.0" promptText="CHOISIR DATE" GridPane.columnIndex="1" />
+                        <DatePicker fx:id="dateEndFieldUpLocationSet" editable="false" prefHeight="14.0" prefWidth="244.0" promptText="CHOISIR DATE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Propriétaire :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Logement :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboPersonFieldUpLocationSet" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="comboHomeFieldUpLocationSet" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="delLocationSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#b91313" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="89.0" layoutY="19.0" prefHeight="22.0" prefWidth="174.0" text="Supprimer location" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backDelLocation" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backDelLocationBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchFieldDelLocation" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboDelLocation" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateFieldDelLocation" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateFieldDelLocationBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <Button fx:id="supprimerLocation" layoutX="400.0" layoutY="381.0" mnemonicParsing="false" onAction="#supprimerLocationBtn" prefHeight="32.0" prefWidth="112.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#119c3e" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                        <Label layoutX="97.0" layoutY="19.0" prefHeight="22.0" prefWidth="158.0" text="Modifier location" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                           <image>
+                              <Image url="@../../../previous.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="12.0" />
+                           </font>
+                        </TextField>
+                        <ChoiceBox layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                        <Button layoutX="523.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                        <Button layoutX="474.0" layoutY="373.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="94.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Button>
+                        <GridPane hgap="12.0" layoutX="27.0" layoutY="87.0" prefHeight="250.0" prefWidth="526.0" vgap="12.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="166.0" text="Début de location :" textFill="#032645" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Lucida Bright Demibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="146.0" text="Fin de location :" textFill="#032645" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Lucida Bright Demibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="114.0" text="Numéro CNI :" textFill="#032645">
+                                 <font>
+                                    <Font name="Lucida Bright Demibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Lucida Bright Demibold" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Lucida Bright Demibold" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Lucida Bright Demibold" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <GridPane hgap="12.0" layoutX="41.0" layoutY="86.0" prefHeight="253.0" prefWidth="500.0" vgap="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Début de location :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Fin de location :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Propriétaire :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="146.0" text="Logement :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="debFieldLocationDel" editable="false" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="endFieldLocationDel" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="personFieldLocationDel" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="homeFieldLocationDel" editable="false" prefHeight="37.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="11.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="homeManagment" prefHeight="466.0" prefWidth="580.0" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label layoutX="185.0" layoutY="14.0" text="Gestion des logements" textFill="#032645">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="19.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="12.0" layoutX="81.0" layoutY="60.0" prefHeight="346.0" prefWidth="418.0" vgap="13.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="addHomeGestion" mnemonicParsing="false" onAction="#addHomeGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="cruda-btn" stylesheets="@../../../principal.css" text="Ajouter logement" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="infoHomeGestion" mnemonicParsing="false" onAction="#infoHomeGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="crudr-btn" stylesheets="@../../../principal.css" text="Informations logement" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delHomeGestion" mnemonicParsing="false" onAction="#delHomeGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="cruds-btn" stylesheets="@../../../principal.css" text="Supprimer logement" textFill="WHITE" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="upHomeGestion" mnemonicParsing="false" onAction="#upHomeGestionBtn" prefHeight="167.0" prefWidth="243.0" styleClass="crudm-btn" stylesheets="@../../../principal.css" text="Modifier logement" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addHomeSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#10599e" height="31.0" layoutX="86.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="279.0" />
+                  <Label layoutX="130.0" layoutY="19.0" prefHeight="22.0" prefWidth="192.0" text="Ajout d'un logement" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="validerAddHome" layoutX="429.0" layoutY="14.0" mnemonicParsing="false" onAction="#validerAddHomeBtn" prefHeight="32.0" prefWidth="83.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Valider" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="backAddHome" fitHeight="37.0" fitWidth="41.0" layoutX="36.0" layoutY="14.0" onMouseClicked="#backAddHomeBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane hgap="12.0" layoutX="4.0" layoutY="72.0" prefHeight="379.0" prefWidth="569.0" vgap="8.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Loyer :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Superficie :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Pièces :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Désignation :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="État :" textFill="#032645" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Administrateur :" textFill="#032645" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Description :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Adresse :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Quartier :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Commune :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loyerAddHome" promptText="Franc CFA" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="superficieAddHome" promptText="Mètre carré" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="pieceAddHome" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="designationAddHome" onAction="#designationAddHome" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="comboEtatAddHome" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="comboQuartierAddHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="comboCommuneAddHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="comboAdministrateurAddHome" prefWidth="150.0" GridPane.columnIndex="3" />
+                        <ComboBox fx:id="comboAdresseAddHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="comboDescriptionAddHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="infoHomeSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#11809c" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="76.0" layoutY="19.0" prefHeight="22.0" prefWidth="200.0" text="Informations logement" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="17.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backInfoHome" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backInfoHomeBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tableViewAddInfoHome" layoutX="12.0" layoutY="285.0" onMouseClicked="#tableViewAddInfoHomeBtn" prefHeight="177.0" prefWidth="558.0">
+                     <columns>
+                        <TableColumn fx:id="id_logement_col" prefWidth="74.0" text="id_logement" />
+                        <TableColumn fx:id="loyer_col" prefWidth="84.0" text="loyer" />
+                        <TableColumn fx:id="superficie_col" prefWidth="69.0" text="superficie" />
+                        <TableColumn fx:id="nb_pieces_col" text="nb_pièces" />
+                        <TableColumn fx:id="designation_col" prefWidth="90.0" text="désignation" />
+                        <TableColumn fx:id="id_bien_col" prefWidth="48.0" text="id_bien" />
+                        <TableColumn fx:id="id_type_col" prefWidth="47.0" text="id_type" />
+                        <TableColumn fx:id="id_adresse_col" prefWidth="65.0" text="id_adresse" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="searchInfoHome" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboInfoHome" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validerAddHome" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateInfoHomeBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <GridPane hgap="12.0" layoutX="27.0" layoutY="51.0" prefHeight="223.0" prefWidth="526.0" vgap="8.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Loyer :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Superficie :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Pièces :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Désignation :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="État :" textFill="#032645" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Administrateur :" textFill="#032645" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Description :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Adresse :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Quartier :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Commune :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loyerInfoHome" editable="false" promptText="Franc CFA" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="superficieInfoHome" editable="false" promptText="Mètre carré" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="pieceInfoHome" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="adresseInfoHome" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextArea fx:id="descriptionInfoHome" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="designationInfoHome" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="etatInfoHome" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="quartierInfoHome" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="communeInfoHome" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="administrateurInfoHome" editable="false" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="upHomeSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#119c3e" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="90.0" layoutY="19.0" prefHeight="22.0" prefWidth="172.0" text="Modifier logement" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backUpHome" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backUpHome" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchUpHome" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comeUpHome" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateUpHome" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateUpHomeBtn" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <Button fx:id="modifierUpHome" layoutX="476.0" layoutY="408.0" mnemonicParsing="false" onAction="#modifierUpHomeBtn" prefHeight="32.0" prefWidth="94.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <GridPane hgap="12.0" layoutX="35.0" layoutY="64.0" prefHeight="326.0" prefWidth="526.0" vgap="8.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Loyer :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Superficie :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Pièces :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Désignation :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="État :" textFill="#032645" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Administrateur :" textFill="#032645" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Description :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Adresse :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Quartier :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Commune :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loyerUpHome" promptText="Franc CFA" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="superficieUpHome" promptText="Mètre carré" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="pieceUpHome" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="designationUpHome" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="comboEtatUpHome" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="comboQuartierUpHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="comboCommuneUpHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="comboAdministrateurUpHome" prefWidth="150.0" GridPane.columnIndex="3" />
+                        <ComboBox fx:id="comboAdresseUpHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="comboDescriptionUpHome" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="delHomeSet_form" prefHeight="466.0" prefWidth="580.0" stylesheets="@../../../principal.css" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Rectangle arcHeight="34.0" arcWidth="34.0" fill="#b91313" height="31.0" layoutX="60.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="231.0" />
+                  <Label layoutX="80.0" layoutY="19.0" prefHeight="22.0" prefWidth="191.0" text="Supprimer logement" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backDelHome" fitHeight="37.0" fitWidth="41.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backDelHomeBtn" pickOnBounds="true" preserveRatio="true" styleClass="logout-btn">
+                     <image>
+                        <Image url="@../../../previous.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchDelHome" layoutX="409.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" promptText="rechercher">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ChoiceBox fx:id="comboDelHome" layoutX="298.0" layoutY="17.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="validateDelHome" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#validateDelHome" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                  <Button fx:id="supprimerDelHome" layoutX="448.0" layoutY="408.0" mnemonicParsing="false" onAction="#supprimerDelHome" prefHeight="32.0" prefWidth="112.0" styleClass="select-file" stylesheets="@../../../principal.css" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="16.0" />
+                     </font>
+                  </Button>
+                  <GridPane hgap="12.0" layoutX="21.0" layoutY="51.0" prefHeight="346.0" prefWidth="549.0" vgap="8.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Loyer :" textFill="#032645">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Superficie :" textFill="#032645" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Pièces :" textFill="#032645" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Désignation :" textFill="#032645" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="État :" textFill="#032645" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Administrateur :" textFill="#032645" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Description :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Adresse :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Quartier :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="166.0" text="Commune :" textFill="#032645" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Demibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loyerDelHome" editable="false" promptText="Franc CFA" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="superficieDelHome" editable="false" promptText="Mètre carré" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="pieceDelHome" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="adresseDelHome" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextArea fx:id="descriptionDelHome" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="designationDelHome" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="etatDelHome" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="quartierDelHome" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="communeDelHome" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="administrateurDelHome" editable="false" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bureauForm" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="118.0" layoutY="38.0" prefHeight="35.0" prefWidth="344.0" text="Sélectionner une action" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Demibold" size="29.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="17.0" layoutX="12.0" layoutY="90.0" prefHeight="183.0" prefWidth="557.0" vgap="11.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="175.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="addPerson_form" mnemonicParsing="false" onAction="#addPersonFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="cruda-btn" stylesheets="@../../../principal.css" text="Ajouter locataire" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="upPerson_form" mnemonicParsing="false" onAction="#upPersonFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="crudm-btn" stylesheets="@../../../principal.css" text="Modifier locataire" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delPerson_form" mnemonicParsing="false" onAction="#delPersonFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="cruds-btn" stylesheets="@../../../principal.css" text="Supprimer locataire" textFill="WHITE" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addLocation_form" mnemonicParsing="false" onAction="#addLocationFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="cruda-btn" stylesheets="@../../../principal.css" text="Ajouter location" textFill="WHITE" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addHome_form" mnemonicParsing="false" onAction="#addHomeFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="cruda-btn" stylesheets="@../../../principal.css" text="Ajouter logement" textFill="WHITE" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="upLocation_form" mnemonicParsing="false" onAction="#upLocationFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="crudm-btn" stylesheets="@../../../principal.css" text="Modifier location" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="upHome_form" mnemonicParsing="false" onAction="#upHomeFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="crudm-btn" stylesheets="@../../../principal.css" text="Modifier logement" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delLocation_form" mnemonicParsing="false" onAction="#delLocationFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="cruds-btn" stylesheets="@../../../principal.css" text="Supprimer location" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delHome_form" mnemonicParsing="false" onAction="#delHomeFormBtn" prefHeight="38.0" prefWidth="179.0" styleClass="cruds-btn" stylesheets="@../../../principal.css" text="Supprimer logement" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="133.0" layoutX="26.0" layoutY="303.0" stroke="#033662" strokeType="OUTSIDE" strokeWidth="3.0" width="174.0" />
+                  <Line endX="69.0" layoutX="126.0" layoutY="347.0" startX="-96.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="133.0" layoutX="214.0" layoutY="302.0" stroke="#033662" strokeType="OUTSIDE" strokeWidth="3.0" width="341.0" />
+                  <Line endX="229.0" layoutX="321.0" layoutY="347.0" startX="-102.0" />
+                  <Label layoutX="58.0" layoutY="313.0" text="Locataires" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="personNumber" alignment="CENTER" layoutX="89.0" layoutY="370.0" text="11" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="34.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="333.0" layoutY="313.0" text="Logements" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="usedHome" alignment="CENTER" layoutX="291.0" layoutY="370.0" text="8" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="34.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="269.0" layoutY="411.0" prefHeight="19.0" prefWidth="65.0" text="Occupés" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="440.0" layoutY="411.0" prefHeight="19.0" prefWidth="45.0" text="Libres" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="freeHome" alignment="CENTER" layoutX="452.0" layoutY="370.0" text="3" textFill="#033662">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</Pane>

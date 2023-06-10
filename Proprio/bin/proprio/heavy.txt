@@ -1,0 +1,822 @@
+    private Connection connect;
+    private Statement statement;
+    private PreparedStatement prepare;
+    private ResultSet result;
+    
+
+    public void addPersonReset() {
+        cniFieldAddPersonSet.setText("");
+        nomFieldAddPersonSet.setText("");
+        prenomFieldAddPersonSet.setText("");
+        telephoneFieldAddPersonSet.setText("");
+    }
+
+    public void delPersonReset() {
+        cniFieldDelPersonSet.setText("");
+        nomFieldDelPersonSet.setText("");
+        prenomFieldDelPersonSet.setText("");
+        telephoneFieldDelPersonSet.setText("");
+    }
+
+    public void upPersonReset() {
+        cniFieldUpPersonSet.setText("");
+        nomFieldUpPersonSet.setText("");
+        prenomFieldUpPersonSet.setText("");
+        telephoneFieldUpPersonSet.setText("");
+    }
+
+    @FXML
+    void addHomeFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(true);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void addLocationFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(true);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void addPersonFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(true);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void addPersonGestionBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(true);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void backAddLocationSetBtn(MouseEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(true);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void backAddPersonSetBtn(MouseEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(true);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void backDelPersonSetBtn(MouseEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(true);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void backInfoPersonSetBtn(MouseEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(true);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void backUpPersonSetBtn(MouseEvent event) {
+        findUserAll();
+        bureauForm.setVisible(false);
+        personManagment.setVisible(true);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void bureauPanelBtn(ActionEvent event) {
+        bureauForm.setVisible(true);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void delHomeFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(true);
+    }
+
+    @FXML
+    void delLocationFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(true);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void delPersonFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(true);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void delPersonGestionBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(true);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void homePanelBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(true);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void infoPersonGestionBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(true);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void locationPanelBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(true);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void logoutBtn(MouseEvent event) {
+        System.exit(0);
+    }
+
+    @FXML
+    void modifierUpLocationSetBtn(ActionEvent event) {
+    }
+
+    @FXML
+    void modifierUpPersonSetBtn(ActionEvent event) {
+        String sql = "UPDATE locataire SET num_piece = '"
+                + cniFieldUpPersonSet.getText().toUpperCase() + "', nom = '"
+                + nomFieldUpPersonSet.getText().toUpperCase() + "', prenom = '"
+                + prenomFieldUpPersonSet.getText().toUpperCase() + "', telephone = '"
+                + telephoneFieldUpPersonSet.getText().toUpperCase() + "' WHERE num_piece ='"
+                + searchFieldUpPersonSet.getText() + "'";
+
+        connect = dbconnector.connectDb();
+
+        try {
+            Alert alert;
+            if (cniFieldUpPersonSet.getText().isEmpty()
+                    || nomFieldUpPersonSet.getText().isEmpty()
+                    || prenomFieldUpPersonSet.getText().isEmpty()
+                    || telephoneFieldUpPersonSet.getText().isEmpty()) {
+                alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Erreur de validation");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuillez remplir tous les champs.");
+                alert.showAndWait();
+            } else {
+                alert = new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Voulez vous modifier les informations de " + searchFieldUpPersonSet.getText() + " ?");
+                Optional<ButtonType> option = alert.showAndWait();
+
+                if (option.get().equals(ButtonType.OK)) {
+                    try {
+                        statement = connect.createStatement();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        statement.executeUpdate(sql);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+    
+
+                    alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Information");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Les informations ont bien été mises à jour.");
+                    alert.showAndWait();
+                    findUserAll();
+                    upPersonReset();
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void personPanelBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(true);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void supprimerDelPersonSetBtn(ActionEvent event) {
+        if(cniFieldDelPersonSet.getText().equals("")){
+
+        } else {
+            String sql = "DELETE FROM locataire WHERE num_piece = '" + cniFieldDelPersonSet.getText() + "'";
+            connect = dbconnector.connectDb();
+            Alert alert;
+
+            alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Cofirmation");
+            alert.setHeaderText(null);
+            alert.setContentText("Voulez vous supprimer le locataire avec pour numéro de pièce: " + cniFieldDelPersonSet.getText() + " ?");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if (option.get().equals(ButtonType.OK)) {
+                try {
+                    statement = connect.createStatement();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    statement.executeUpdate(sql);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Ce locataire a bien été supprimé.");
+                alert.showAndWait();
+                findUserAll();
+                delPersonReset();
+            }
+        }
+    }
+
+    @FXML
+    void upHomeFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(true);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void upLocationFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(false);
+        upLocationSet_form.setVisible(true);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void upPersonFormBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(true);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void upPersonGestionBtn(ActionEvent event) {
+        bureauForm.setVisible(false);
+        personManagment.setVisible(false);
+        locationManagment.setVisible(false);
+        homeManagment.setVisible(false);
+        addPersonSet_form.setVisible(false);
+        addLocationSet_form.setVisible(false);
+        addHomeSet_form.setVisible(false);
+        infoPersonSet_form.setVisible(false);
+        infoLocationSet_form.setVisible(false);
+        infoHomeSet_form.setVisible(false);
+        upPersonSet_form.setVisible(true);
+        upLocationSet_form.setVisible(false);
+        upHomeSet_form.setVisible(false);
+        delPersonSet_form.setVisible(false);
+        delLocationSet_form.setVisible(false);
+        delHomeSet_form.setVisible(false);
+    }
+
+    @FXML
+    void validateDelPersonSetBtn(ActionEvent event) {
+        connect = dbconnector.connectDb();
+        String search = searchFieldDelPersonSet.getText().toUpperCase();
+        personDriver personDel = new personDriver();
+        personClass user = personDel.findUserByCNI(search);
+        if (user == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Utilisateur non trouvé");
+            alert.setHeaderText(null);
+            alert.setContentText("L'utilisateur n'existe pas");
+            alert.showAndWait();
+        } else {
+            cniFieldDelPersonSet.setText(user.getNum_piece());
+            nomFieldDelPersonSet.setText(user.getNom());
+            prenomFieldDelPersonSet.setText(user.getPrenom());
+            telephoneFieldDelPersonSet.setText(user.getTelephone());
+        }
+    }
+    
+    public void comboSelectorInfoPersonSetList() {
+        comboSelectorInfoPersonSet.setItems(FXCollections.observableArrayList("nom", "prénom", "téléphone"));
+        comboSelectorInfoPersonSet.setValue("nom");
+    }
+
+    public void comboSelectorDelPersonSetList() {
+        comboSelectorDelPersonSet.setItems(FXCollections.observableArrayList("CNI"));
+        comboSelectorDelPersonSet.setValue("CNI");
+    }
+
+    public void comboSelectorUpPersonSetList() {
+        comboSelectorUpPersonSet.setItems(FXCollections.observableArrayList("CNI"));
+        comboSelectorUpPersonSet.setValue("CNI");
+    }
+    
+    
+
+    private void searchUser() {
+        String searchName = searchFieldInfoPersonSet.getText().toUpperCase();
+        personDriver personD = new personDriver();
+        String option = comboSelectorInfoPersonSet.getValue();
+        ObservableList<personClass> userList = null;
+
+        if (option.equals("nom")){
+            userList = personD.findUserByName(searchName);
+        } else if (option.equals("prénom")){
+            userList = personD.findUserByPrenom(searchName);
+        } else if (option.equals("téléphone")){
+            userList = personD.findUserByTelephone(searchName);
+        } 
+
+        if (userList != null) {
+            // Mettre à jour la TableView avec les données de l'utilisateur
+            
+
+            num_piece_col_Info.setCellValueFactory(new PropertyValueFactory<>("num_piece"));
+            nom_col_info.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            prenom_col_info.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+            telephone_col_info.setCellValueFactory(new PropertyValueFactory<>("telephone"));
+
+            tableViewInfoPersonSet.setItems(userList);
+        }    
+        else {
+            // Afficher une fenêtre d'alerte indiquant que l'utilisateur n'existe pas
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Utilisateur non trouvé");
+            alert.setHeaderText(null);
+            alert.setContentText("L'utilisateur n'existe pas");
+            alert.showAndWait();
+        }
+    }
+
+    // Méthode de recherche d'utilisateur 
+    public void findUserAll() {
+        ObservableList<personClass> users = FXCollections.observableArrayList();
+        connect = dbconnector.connectDb();
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            String query = "SELECT * FROM locataire";
+            statement = connect.prepareStatement(query);
+            resultSet = statement.executeQuery(query);
+            
+
+            while (resultSet.next()) {
+                personClass user = new personClass(resultSet.getString("num_piece"), resultSet.getString("nom"),
+                resultSet.getString("prenom"), resultSet.getString("telephone"));
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Fermer les ressources JDBC
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        num_piece_col_Info.setCellValueFactory(new PropertyValueFactory<>("num_piece"));
+        nom_col_info.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        prenom_col_info.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        telephone_col_info.setCellValueFactory(new PropertyValueFactory<>("telephone"));
+
+        tableViewInfoPersonSet.setItems(users);
+    }
+
+    @FXML
+    void validateInfoPersonSetBtn(ActionEvent event) {
+        if (searchFieldInfoPersonSet.getText().equals("")){
+            findUserAll();
+        } else {
+            searchUser();
+        }
+    }
+
+    @FXML
+    void validateUpLocationSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateUpPersonSetBtn(ActionEvent event) {
+        connect = dbconnector.connectDb();
+        String search = searchFieldUpPersonSet.getText().toUpperCase();
+        personDriver personDel = new personDriver();
+        personClass user = personDel.findUserByCNI(search);
+        if (user == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Utilisateur non trouvé");
+            alert.setHeaderText(null);
+            alert.setContentText("L'utilisateur n'existe pas");
+            alert.showAndWait();
+        } else {
+            cniFieldUpPersonSet.setText(user.getNum_piece());
+            nomFieldUpPersonSet.setText(user.getNom());
+            prenomFieldUpPersonSet.setText(user.getPrenom());
+            telephoneFieldUpPersonSet.setText(user.getTelephone());
+        }
+    }
+
+    @FXML
+    void validerAddLocationSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validerAddPersonBtn(ActionEvent event) {
+        String sql = "INSERT INTO locataire "
+                + "(num_piece,nom,prenom,telephone) "
+                + "VALUES(?,?,?,?)";
+
+        connect = dbconnector.connectDb();
+
+        try {
+            Alert alert;
+            if (cniFieldAddPersonSet.getText().isEmpty()
+                    || nomFieldAddPersonSet.getText().isEmpty()
+                    || prenomFieldAddPersonSet.getText().isEmpty()
+                    || telephoneFieldAddPersonSet.getText().isEmpty()){
+                alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Erreur de validation");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuillez remplir tous les champs.");
+                alert.showAndWait();
+            } else {
+
+                String check = "SELECT num_piece FROM locataire WHERE num_piece = '"
+                        + cniFieldAddPersonSet.getText() + "'";
+
+                statement = connect.createStatement();
+                result = statement.executeQuery(check);
+
+                if (result.next()) {
+                    alert = new Alert(AlertType.ERROR);
+                    alert.setTitle("Error Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Ce numéro de pièce: " + cniFieldAddPersonSet.getText() + "existe déja.");
+                    alert.showAndWait();
+                } else {
+
+                    prepare = connect.prepareStatement(sql);
+                    prepare.setString(1, cniFieldAddPersonSet.getText().toUpperCase());
+                    prepare.setString(2, nomFieldAddPersonSet.getText().toUpperCase());
+                    prepare.setString(3, prenomFieldAddPersonSet.getText().toUpperCase());
+                    prepare.setString(4, telephoneFieldAddPersonSet.getText().toUpperCase());
+
+                    prepare.executeUpdate();
+                    alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Validé");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Ce locataire a bien été ajouté.");
+                    alert.showAndWait();
+                    findUserAll();
+                    addPersonReset();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void tableViewInfoPersonSetBtn(MouseEvent event) {
+        if (event.getClickCount() == 1) { // Vérifie un seul clic
+            // Récupérer la ligne sélectionnée
+            personClass selectedItem = tableViewInfoPersonSet.getSelectionModel().getSelectedItem();
+    
+            // Vérifier si une ligne est sélectionnée
+            if (selectedItem != null) {
+                // Récupérer les données relatives à la ligne sélectionnée
+                String num_piece = selectedItem.getNum_piece(); 
+                String nom = selectedItem.getNom(); 
+                String prenom = selectedItem.getPrenom(); 
+                String telephone = selectedItem.getTelephone(); 
+    
+                // Remplir les champs de texte avec les données récupérées
+                cniFieldInfoPersonSet.setText(num_piece);
+                nomFieldInfoPersonSet.setText(nom);
+                prenomFieldInfoPersonSet.setText(prenom);
+                telephoneFieldInfoPersonSet.setText(telephone);
+
+            }
+        }
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        comboSelectorInfoPersonSetList();
+        comboSelectorDelPersonSetList();
+        comboSelectorUpPersonSetList();
+        findUserAll();
+    }
+    
+}

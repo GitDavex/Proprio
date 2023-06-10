@@ -1,0 +1,845 @@
+package proprio;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+
+public class zeusController {
+
+    @FXML
+    private AnchorPane addHomeSet_form;
+
+    @FXML
+    private Button addHome_form;
+
+    @FXML
+    private AnchorPane addLocationSet_form;
+
+    @FXML
+    private Button addLocation_form;
+
+    @FXML
+    private Button addPersonGestion_form;
+
+    @FXML
+    private AnchorPane addPersonSet_form;
+
+    @FXML
+    private Button addPerson_form;
+
+    @FXML
+    private TextField administrateurDelHome;
+
+    @FXML
+    private TextField administrateurInfoHome;
+
+    @FXML
+    private TextField adresseAddHome;
+
+    @FXML
+    private TextField adresseDelHome;
+
+    @FXML
+    private TextField adresseInfoHome;
+
+    @FXML
+    private TextField adresseUpHome;
+
+    @FXML
+    private ImageView backAddHome;
+
+    @FXML
+    private ImageView backAddLocationSet;
+
+    @FXML
+    private ImageView backAddPersonSet;
+
+    @FXML
+    private ImageView backDelHome;
+
+    @FXML
+    private ImageView backDelLocation;
+
+    @FXML
+    private ImageView backDelPersonSet;
+
+    @FXML
+    private ImageView backInfoHome;
+
+    @FXML
+    private ImageView backInfoPersonSet;
+
+    @FXML
+    private ImageView backLocationInfo;
+
+    @FXML
+    private ImageView backUpHome;
+
+    @FXML
+    private ImageView backUpLocationSet;
+
+    @FXML
+    private ImageView backUpPersonSet;
+
+    @FXML
+    private Button bureauBtn_panel;
+
+    @FXML
+    private AnchorPane bureauForm;
+
+    @FXML
+    private TextField cniFieldAddLocationSet;
+
+    @FXML
+    private TextField cniFieldAddPersonSet;
+
+    @FXML
+    private TextField cniFieldDelLocation;
+
+    @FXML
+    private TextField cniFieldDelPersonSet;
+
+    @FXML
+    private TextField cniFieldInfoLocation;
+
+    @FXML
+    private TextField cniFieldInfoPersonSet;
+
+    @FXML
+    private TextField cniFieldUpLocation;
+
+    @FXML
+    private TextField cniFieldUpPersonSet;
+
+    @FXML
+    private ComboBox<?> comboAdministrateurAddHome;
+
+    @FXML
+    private ComboBox<?> comboAdministrateurUpHome;
+
+    @FXML
+    private ComboBox<?> comboCommuneAddHome;
+
+    @FXML
+    private ComboBox<?> comboCommuneUpHome;
+
+    @FXML
+    private ChoiceBox<?> comboDelHome;
+
+    @FXML
+    private ChoiceBox<?> comboDelLocation;
+
+    @FXML
+    private ComboBox<?> comboEtatAddHome;
+
+    @FXML
+    private ComboBox<?> comboEtatUpHome;
+
+    @FXML
+    private ComboBox<?> comboHomeFieldAddLocationSet;
+
+    @FXML
+    private ComboBox<?> comboHomeFieldDelLocationSet;
+
+    @FXML
+    private ComboBox<?> comboHomeFieldInfoLocationSet;
+
+    @FXML
+    private ComboBox<?> comboHomeFieldUpLocationSet;
+
+    @FXML
+    private ChoiceBox<?> comboInfoHome;
+
+    @FXML
+    private ChoiceBox<?> comboLocationInfo;
+
+    @FXML
+    private ComboBox<?> comboPersonFieldAddLocationSet;
+
+    @FXML
+    private ComboBox<?> comboPersonFieldDelLocationSet;
+
+    @FXML
+    private ComboBox<?> comboPersonFieldInfoLocationSet;
+
+    @FXML
+    private ComboBox<?> comboPersonFieldUpLocationSet;
+
+    @FXML
+    private ComboBox<?> comboQuartierAddHome;
+
+    @FXML
+    private ComboBox<?> comboQuartierUpHome;
+
+    @FXML
+    private ChoiceBox<?> comboSelectorDelPersonSet;
+
+    @FXML
+    private ChoiceBox<?> comboSelectorInfoPersonSet;
+
+    @FXML
+    private ChoiceBox<?> comboSelectorUpLocationSet;
+
+    @FXML
+    private ChoiceBox<?> comboSelectorUpPersonSet;
+
+    @FXML
+    private ChoiceBox<?> comeUpHome;
+
+    @FXML
+    private TextField communeDelHome;
+
+    @FXML
+    private TextField communeInfoHome;
+
+    @FXML
+    private DatePicker dateEndFieldAddLocationSet;
+
+    @FXML
+    private DatePicker dateEndFieldDelLocationSet;
+
+    @FXML
+    private DatePicker dateEndFieldInfoLocationSet;
+
+    @FXML
+    private DatePicker dateEndFieldUpLocationSet;
+
+    @FXML
+    private DatePicker dateStartFieldAddLocationSet;
+
+    @FXML
+    private DatePicker dateStartFieldDelLocationSet;
+
+    @FXML
+    private DatePicker dateStartFieldInfoLocationSet;
+
+    @FXML
+    private DatePicker dateStartFieldUpLocationSet;
+
+    @FXML
+    private TableColumn<?, ?> date_deb_col_Home;
+
+    @FXML
+    private TableColumn<?, ?> date_fin_col_Home;
+
+    @FXML
+    private AnchorPane delHomeSet_form;
+
+    @FXML
+    private Button delHome_form;
+
+    @FXML
+    private AnchorPane delLocationSet_form;
+
+    @FXML
+    private Button delLocation_form;
+
+    @FXML
+    private Button delPersonGestion_form;
+
+    @FXML
+    private AnchorPane delPersonSet_form;
+
+    @FXML
+    private Button delPerson_form;
+
+    @FXML
+    private TextArea descriptionAddHome;
+
+    @FXML
+    private TextArea descriptionDelHome;
+
+    @FXML
+    private TextArea descriptionInfoHome;
+
+    @FXML
+    private TextArea descriptionUpHome;
+
+    @FXML
+    private TextField designationAddHome;
+
+    @FXML
+    private TextField designationDelHome;
+
+    @FXML
+    private TextField designationInfoHome;
+
+    @FXML
+    private TextField designationUpHome;
+
+    @FXML
+    private TableColumn<?, ?> designation_col;
+
+    @FXML
+    private TextField etatDelHome;
+
+    @FXML
+    private TextField etatInfoHome;
+
+    @FXML
+    private Label freeHome;
+
+    @FXML
+    private Button homeBtn_panel;
+
+    @FXML
+    private AnchorPane homeManagment;
+
+    @FXML
+    private TableColumn<?, ?> id_adresse_col;
+
+    @FXML
+    private TableColumn<?, ?> id_bien_col;
+
+    @FXML
+    private TableColumn<?, ?> id_location_col_Home;
+
+    @FXML
+    private TableColumn<?, ?> id_logement_col;
+
+    @FXML
+    private TableColumn<?, ?> id_logement_col_Home;
+
+    @FXML
+    private TableColumn<?, ?> id_type_col;
+
+    @FXML
+    private AnchorPane infoHomeSet_form;
+
+    @FXML
+    private AnchorPane infoLocationSet_form;
+
+    @FXML
+    private Button infoPersonGestion_form;
+
+    @FXML
+    private AnchorPane infoPersonSet_form;
+
+    @FXML
+    private Button locationBtn_panel;
+
+    @FXML
+    private AnchorPane locationManagment;
+
+    @FXML
+    private ImageView logout;
+
+    @FXML
+    private TextField loyerAddHome;
+
+    @FXML
+    private TextField loyerDelHome;
+
+    @FXML
+    private TextField loyerInfoHome;
+
+    @FXML
+    private TextField loyerUpHome;
+
+    @FXML
+    private TableColumn<?, ?> loyer_col;
+
+    @FXML
+    private Button modifierUpHome;
+
+    @FXML
+    private Button modifierUpLocationSet;
+
+    @FXML
+    private Button modifierUpPersonSet;
+
+    @FXML
+    private TableColumn<?, ?> nb_pieces_col;
+
+    @FXML
+    private TextField nomFieldAddPersonSet;
+
+    @FXML
+    private TextField nomFieldDelPersonSet;
+
+    @FXML
+    private TextField nomFieldInfoPersonSet;
+
+    @FXML
+    private TextField nomFieldUpPersonSet;
+
+    @FXML
+    private TableColumn<?, ?> nom_col_info;
+
+    @FXML
+    private TableColumn<?, ?> num_piece_col_Home;
+
+    @FXML
+    private TableColumn<?, ?> num_piece_col_Info;
+
+    @FXML
+    private Button personBtn_panel;
+
+    @FXML
+    private AnchorPane personManagment;
+
+    @FXML
+    private Label personNumber;
+
+    @FXML
+    private TextField pieceAddHome;
+
+    @FXML
+    private TextField pieceDelHome;
+
+    @FXML
+    private TextField pieceInfoHome;
+
+    @FXML
+    private TextField pieceUpHome;
+
+    @FXML
+    private TextField prenomFieldAddPersonSet;
+
+    @FXML
+    private TextField prenomFieldDelPersonSet;
+
+    @FXML
+    private TextField prenomFieldInfoPersonSet;
+
+    @FXML
+    private TextField prenomFieldUpPersonSet;
+
+    @FXML
+    private TableColumn<?, ?> prenom_col_info;
+
+    @FXML
+    private TextField quartierDelHome;
+
+    @FXML
+    private TextField quartierInfoHome;
+
+    @FXML
+    private TextField searchDelHome;
+
+    @FXML
+    private TextField searchFieldDelLocation;
+
+    @FXML
+    private TextField searchFieldDelPersonSet;
+
+    @FXML
+    private TextField searchFieldInfoPersonSet;
+
+    @FXML
+    private TextField searchFieldLocationInfo;
+
+    @FXML
+    private TextField searchFieldUpLocationSet;
+
+    @FXML
+    private TextField searchFieldUpPersonSet;
+
+    @FXML
+    private TextField searchInfoHome;
+
+    @FXML
+    private TextField searchUpHome;
+
+    @FXML
+    private TextField superficieAddHome;
+
+    @FXML
+    private TextField superficieDelHome;
+
+    @FXML
+    private TextField superficieInfoHome;
+
+    @FXML
+    private TextField superficieUpHome;
+
+    @FXML
+    private TableColumn<?, ?> superficie_col;
+
+    @FXML
+    private Button supprimerDelHome;
+
+    @FXML
+    private Button supprimerDelPersonSet;
+
+    @FXML
+    private Button supprimerLocation;
+
+    @FXML
+    private TableView<?> tableViewAddInfoHome;
+
+    @FXML
+    private TableView<?> tableViewInfoHomeSet;
+
+    @FXML
+    private TableView<?> tableViewInfoPersonSet;
+
+    @FXML
+    private TextField telephoneFieldAddPersonSet;
+
+    @FXML
+    private TextField telephoneFieldDelPersonSet;
+
+    @FXML
+    private TextField telephoneFieldInfoPersonSet;
+
+    @FXML
+    private TextField telephoneFieldUpPersonSet;
+
+    @FXML
+    private TableColumn<?, ?> telephone_col_info;
+
+    @FXML
+    private AnchorPane upHomeSet_form;
+
+    @FXML
+    private Button upHome_form;
+
+    @FXML
+    private AnchorPane upLocationSet_form;
+
+    @FXML
+    private Button upLocation_form;
+
+    @FXML
+    private Button upPersonGestion_form;
+
+    @FXML
+    private AnchorPane upPersonSet_form;
+
+    @FXML
+    private Button upPerson_form;
+
+    @FXML
+    private Label usedHome;
+
+    @FXML
+    private Button validateDelHome;
+
+    @FXML
+    private Button validateDelPersonSet;
+
+    @FXML
+    private Button validateFieldDelLocation;
+
+    @FXML
+    private Button validateInfoPersonSet;
+
+    @FXML
+    private Button validateLocationInfo;
+
+    @FXML
+    private Button validateUpHome;
+
+    @FXML
+    private Button validateUpLocationSet;
+
+    @FXML
+    private Button validateUpPersonSet;
+
+    @FXML
+    private Button validerAddHome;
+
+    @FXML
+    private Button validerAddLocationSet;
+
+    @FXML
+    private Button validerAddPerson;
+
+    @FXML
+    void addHomeFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void addHomeGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void addLocationFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void addLocationGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void addPersonFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void addPersonGestionBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void backAddHomeBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backAddLocationSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backAddPersonSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backDelHomeBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backDelLocationBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backDelPersonSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backInfoHomeBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backInfoPersonSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backLocationInfoBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backUpHome(MouseEvent event) {
+
+    }
+
+    @FXML
+    void backUpPersonSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void bureauPanelBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void delHomeFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void delHomeGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void delLocationFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void delLocationGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void delPersonFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void delPersonGestionBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void homePanelBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void infoHomeGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void infoLocationGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void infoPersonGestionBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void locationPanelBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void logoutBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void modifierUpHomeBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void modifierUpLocationSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void modifierUpPersonSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void personPanelBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void supprimerDelHome(ActionEvent event) {
+
+    }
+
+    @FXML
+    void supprimerDelPersonSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void supprimerLocationBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void tableViewAddInfoHomeBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void tableViewInfoHomeSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void tableViewInfoPersonSetBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void upHomeFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void upHomeGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void upLocationFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void upLocationGestion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void upPersonFormBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void upPersonGestionBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateDelHome(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateDelPersonSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateFieldDelLocationBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateInfoPersonSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateLocationInfoBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateUpHomeBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateUpLocationSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validateUpPersonSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validerAddHomeBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validerAddLocationSetBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void validerAddPersonBtn(ActionEvent event) {
+
+    }
+
+}

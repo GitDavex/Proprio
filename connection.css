@@ -1,0 +1,35 @@
+.delete-btn{
+    -fx-background-color:#86253f;
+    -fx-background-radius:8px;
+    -fx-text-fill:#fff;
+    -fx-font-size:14px;
+    -fx-font-family:"Arial";
+    -fx-cursor:hand;
+    -fx-border-color:linear-gradient(to bottom right, #272b3f, #256b51);
+    -fx-border-color:linear-gradient(to bottom right, #272b3f, #256b51);
+    -fx-font-size:13px;
+    -fx-font-family:"Arial";
+    -fx-border-width:2px;
+}
+
+.background{
+    -fx-background-color: #145187d0;
+}
+
+.connect-btn{
+    -fx-background-radius:8px;
+    -fx-background-color:#2087d5;
+    -fx-cursor:hand;
+}
+
+.connect-btn:hover{
+    -fx-background-radius:8px;
+    -fx-background-color:#1aa94c;
+}
+
+.textfield{
+}
+
+.textfield:focused{
+    -fx-border-color:#1aa94c;
+}
